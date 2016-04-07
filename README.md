@@ -48,3 +48,37 @@ if (Meteor.isClient) {
 > { type: Function.call(collection, userId, doc, fieldNames?, modifier?, options?) }
 
 Here you can add your own types for compilation.
+
+### Shuttler.Scripts.attachScripts
+> ()
+
+It will make any collection storage script.
+
+### scriptsCollection.isScripts
+> Boolean = true
+
+Allows you to check the collection as scripts storage.
+
+```js
+var document = Shuttler.Scripts.findOne();
+if (Shuttler.collection(document.Collection()).isScripts) {
+	console.log('Is a script!');
+}
+```
+
+### scriptDocument.isScript
+> Boolean
+
+Allows you to check the document as a script.
+
+```js
+var document = Shuttler.Scripts.findOne();
+if (document.isScript) {
+	console.log('Is a script!');
+}
+```
+
+## Versions
+
+### 0.0.1
+* `isScript` and `isScripts`

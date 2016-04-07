@@ -21,10 +21,17 @@ Shuttler.Scripts.Schema = new SimpleSchema({
 		optional: true
 	}
 });
+
+Shuttler.Scripts.Helpers = {
+	isScript: true
+};
+
 Shuttler.Scripts.attachScripts = function() {
 	var collection = this;
 	
 	this.attachSchema(Shuttler.Scripts.Schema);
+	
+	this.helpers(Shuttler.Scripts.Helpers);
 	
 	if (Meteor.isServer) {
 		this.after.insert(function(userId, doc) {
@@ -35,6 +42,8 @@ Shuttler.Scripts.attachScripts = function() {
 				Shuttler.Scripts._types[doc.type].apply(collection, arguments);
 		});
 	}
+	
+	this.isScripts = true;
 };
 
 Shuttler.Scripts.attachScripts(Shuttler.Scripts);

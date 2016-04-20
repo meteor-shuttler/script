@@ -1,6 +1,6 @@
 # Scripts
 
-[Examples](http://meteor-shuttler.herokuapp.com/scripts) [GitHub](https://github.com/meteor-shuttler/scripts) [Atmosphere.js](atmospherejs.com/shuttler/scripts)
+[GitHub](https://github.com/meteor-shuttler/scripts) [Atmosphere.js](atmospherejs.com/shuttler/scripts)
 
 Reactive executable client scripts from mongodb.
 

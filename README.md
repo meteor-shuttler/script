@@ -2,7 +2,7 @@
 
 [GitHub](https://github.com/meteor-shuttler/scripts) [Atmosphere.js](atmospherejs.com/shuttler/scripts)
 
-Reactive executable client scripts from mongodb.
+Reactive compilable and executable scripts on client and server with mongodb.
 
 ## Install
 
@@ -49,6 +49,11 @@ if (Meteor.isClient) {
 
 Here you can add your own types for compilation.
 
+Out of box types support:
+
+* `js` Meteor Babel version of JavaScript
+* `jsx` React.js version of Meteor Babel JavaScript
+
 ### Shuttler.Scripts.attachScripts
 > ()
 
@@ -79,6 +84,9 @@ if (document.isScript) {
 ```
 
 ## Versions
+
+### 0.0.3
+* `jsx` type
 
 ### 0.0.1
 * `isScript` and `isScripts`

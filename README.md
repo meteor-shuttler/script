@@ -85,6 +85,9 @@ if (document.isScript) {
 
 ## Versions
 
+### 0.0.4
+* fix big bug
+
 ### 0.0.3
 * `jsx` type
 

@@ -26,24 +26,22 @@ Shuttler.Scripts.Helpers = {
 	isScript: true
 };
 
-Shuttler.Scripts.attachScripts = function() {
-	var collection = this;
+Shuttler.Scripts.attachScripts = function(collection) {
+	collection.attachSchema(Shuttler.Scripts.Schema);
 	
-	this.attachSchema(Shuttler.Scripts.Schema);
-	
-	this.helpers(Shuttler.Scripts.Helpers);
+	collection.helpers(Shuttler.Scripts.Helpers);
 	
 	if (Meteor.isServer) {
-		this.after.insert(function(userId, doc) {
+		collection.after.insert(function(userId, doc) {
 			Shuttler.Scripts._types[doc.type].apply(collection, arguments);
 		});
-		this.after.update(function(userId, doc) {
+		collection.after.update(function(userId, doc) {
 			if (this.previous.source != doc.source || this.previous.type != doc.type)
 				Shuttler.Scripts._types[doc.type].apply(collection, arguments);
 		});
 	}
 	
-	this.isScripts = true;
+	collection.isScripts = true;
 };
 
 Shuttler.Scripts.attachScripts(Shuttler.Scripts);

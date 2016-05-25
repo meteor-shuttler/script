@@ -23,7 +23,16 @@ Shuttler.Scripts.Schema = new SimpleSchema({
 });
 
 Shuttler.Scripts.Helpers = {
-	isScript: true
+	isScript: true,
+	eval() {
+		var module = {
+			exports: {}
+		};
+		((module, exports) => {
+			eval(this.script);
+		})(module, module.exports);
+		return module;
+	}
 };
 
 Shuttler.Scripts.attachScripts = function(collection) {

@@ -1,6 +1,6 @@
 Package.describe({
 	name: 'shuttler:scripts',
-	version: '0.0.4',
+	version: '0.0.5',
 	summary: 'Reactive compilable and executable scripts on client and server with mongodb.',
 	git: 'https://github.com/meteor-shuttler/scripts',
 	documentation: 'README.md'

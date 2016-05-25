@@ -83,7 +83,22 @@ if (document.isScript) {
 }
 ```
 
+### scriptDocument.eval
+> module = { exports: {} }
+
+`require`/`import` some script and return module exports.
+
+```js
+var document = Shuttler.Scripts.findOne();
+// document.source = "export default 123";
+var module = document.eval();
+module.exports.default; // 123
+```
+
 ## Versions
+
+### 0.0.5
+* `.eval`
 
 ### 0.0.4
 * fix big bug

@@ -23,7 +23,7 @@ If the compilation was an error, information about it will be in the `error` fie
 
 ```js
 if (Meteor.isClient) {
-	Shuttler.Scripts.observe({
+	Shuttler.Scripts.find().observe({
 		changed(newDocument, oldDocument) {
 			console.log(newDocument);
 			(function(abc){
